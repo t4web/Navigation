@@ -1,2 +1,2 @@
 # Navigation
-ZF2 Module which simplifies creationiewing menus
+ZF2 Module which simplifies creating and viewing menus
