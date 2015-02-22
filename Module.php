@@ -4,6 +4,8 @@ namespace Navigation;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\ServiceProviderInterface;
+use Zend\ServiceManager\ServiceLocatorInterface;
+use Navigation\Menu\Navigator;
 
 class Module implements AutoloaderProviderInterface, ConfigProviderInterface,
                         ServiceProviderInterface
@@ -27,7 +29,13 @@ class Module implements AutoloaderProviderInterface, ConfigProviderInterface,
 
     public function getServiceConfig()
     {
-        return array();
+        return array(
+            'factories' => array(
+                'Navigation\Menu\Navigator' => function (ServiceLocatorInterface $sl) {
+                    return new Navigator();
+                },
+            )
+        );
     }
 
 }
