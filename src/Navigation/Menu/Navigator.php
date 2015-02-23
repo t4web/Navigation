@@ -7,18 +7,17 @@ class Navigator {
 
     private $config = [];
 
-    public function __construct()
-    {
-        $this->add(new Entry('Dashboard', 'home', 'menu-icon fa fa-dashboard'));
-        $this->add(new Entry('Employees', 'employees-list', 'menu-icon fa fa-users'));
-    }
-
     /**
      * @param Entry $entry
      */
     public function add(Entry $entry)
     {
         $this->config[] = $entry;
+    }
+
+    public function addEntry($label, $route, $iconClass = '')
+    {
+        $this->config[] = new Entry($label, $route, $iconClass);
     }
 
     /**

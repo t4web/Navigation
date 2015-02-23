@@ -29,9 +29,9 @@ public function onBootstrap(EventInterface $e)
 {
     $sl = $e->getApplication()->getServiceLocator();
     $navigarot = $sl->get('Navigation\Menu\Navigator');
-    $navigator->add(new Navigation\Menu\Entry('Dashboard', 'home', 'fa fa-dashboard'));
-    $navigator->add(new Navigation\Menu\Entry('Employees', 'employees-list', 'fa fa-users'));
-    $navigator->add(new Navigation\Menu\Entry(TITLE, ROUTE, ENTRY_ICON_CLASS));
+    $navigator->addEntry('Dashboard', 'home', 'fa fa-dashboard');
+    $navigator->addEntry('Employees', 'employees-list', 'fa fa-users');
+    $navigator->addEntry(TITLE, ROUTE, ENTRY_ICON_CLASS);
 }
 ```
 where `TITLE` - title in meny entry, `ROUTE` - route from module config, `ENTRY_ICON_CLASS` - class for &lt;i&gt; tag.
@@ -40,7 +40,7 @@ After this you can add in your layout menu rendering:
 ```php
 <?= $this->navigation('UserNavigation')
     ->menu()->setUlClass('navigation')
-    ->setPartial('partial/navigation'); ?>
+    ->setPartial('navigation'); ?>
 ```
 will be render:
 ```html
@@ -53,3 +53,5 @@ will be render:
     </li>
 </ul>
 ```
+
+For customizing menu you can copy partial from vendor/t4web/navigation/view/partials/navigation.phtml to your module and modify it.
