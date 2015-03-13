@@ -1,4 +1,4 @@
-# T4webNavigation
+# Navigation
 ZF2 Module which simplifies creating and viewing menus
 
 ## Usage
@@ -7,11 +7,11 @@ Add Navigation repo in yours require in composer.json:
 "repositories": [
     {
         "type": "git",
-        "url": "https://github.com/t4web/T4webNavigation.git"
+        "url": "https://github.com/t4web/navigation.git"
     }
 ],
 "require": {
-    "t4web/t4web-navigation": "dev-master"
+    "t4web/navigation": "dev-master"
 }
 ```
 In your project, for example in modules/Application/Module.php, you can add Navigation service:
@@ -54,4 +54,4 @@ will be render:
 </ul>
 ```
 
-For customizing menu you can copy partial from vendor/t4web/t4web-navigation/view/partials/navigation.phtml to your module and modify it.
+For customizing menu you can copy partial from vendor/t4web/navigation/view/partials/navigation.phtml to your module and modify it.
