@@ -1,5 +1,5 @@
 <?php
-namespace Navigation;
+namespace T4webNavigation;
 
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
@@ -31,7 +31,7 @@ class Module implements AutoloaderProviderInterface, ConfigProviderInterface,
     {
         return array(
             'factories' => array(
-                'Navigation\Menu\Navigator' => function (ServiceLocatorInterface $sl) {
+                'T4webNavigation\Menu\Navigator' => function (ServiceLocatorInterface $sl) {
                     return new Navigator();
                 },
             )

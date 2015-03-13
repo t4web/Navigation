@@ -1,5 +1,5 @@
 {
-    "name": "t4web/navigation",
+    "name": "t4web/t4web-navigation",
     "description": "ZF2 Module which simplifies creationiewing menus",
     "type": "library",
     "license": "BSD-3-Clause",
@@ -7,7 +7,7 @@
         "zf2",
         "navigation"
     ],
-    "homepage": "https://github.com/t4web/Navigation",
+    "homepage": "https://github.com/t4web/T4webNavigation",
     "authors": [
         {
             "name": "Max Gulturyan",
@@ -24,7 +24,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Navigation": "src/"
+            "T4webNavigation": "src/"
         },
         "classmap": [
             "./Module.php"

@@ -1,10 +1,10 @@
 <?php
 
-namespace Navigation;
+namespace T4webNavigation;
 
 use Zend\Navigation\Service\DefaultNavigationFactory;
 use Zend\ServiceManager\ServiceLocatorInterface;
-use Navigation\Menu\Navigator;
+use T4webNavigation\Menu\Navigator;
 
 class Factory extends DefaultNavigationFactory
 {
@@ -17,7 +17,7 @@ class Factory extends DefaultNavigationFactory
     {
         if (null === $this->pages) {
             /** @var Navigator $navigator */
-            $navigator = $serviceLocator->get('Navigation\Menu\Navigator');
+            $navigator = $serviceLocator->get('T4webNavigation\Menu\Navigator');
 
             $config = $navigator->getConfig();
 

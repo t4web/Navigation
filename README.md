@@ -1,4 +1,4 @@
-# Navigation
+# T4webNavigation
 ZF2 Module which simplifies creating and viewing menus
 
 ## Usage
@@ -7,18 +7,18 @@ Add Navigation repo in yours require in composer.json:
 "repositories": [
     {
         "type": "git",
-        "url": "https://github.com/t4web/navigation.git"
+        "url": "https://github.com/t4web/T4webNavigation.git"
     }
 ],
 "require": {
-    "t4web/navigation": "dev-master"
+    "t4web/t4web-navigation": "dev-master"
 }
 ```
 In your project, for example in modules/Application/Module.php, you can add Navigation service:
 ```php
 'factories' => array(
       'UserNavigation' => function (ServiceLocatorInterface $sl) {
-          $factory =  new Navigation\Factory();
+          $factory =  new T4webNavigation\Factory();
           return $factory->createService($sl);
       },
   )
@@ -28,7 +28,7 @@ In your BootstrapListener you can add menu entries:
 public function onBootstrap(EventInterface $e)
 {
     $sl = $e->getApplication()->getServiceLocator();
-    $navigarot = $sl->get('Navigation\Menu\Navigator');
+    $navigarot = $sl->get('T4webNavigation\Menu\Navigator');
     $navigator->addEntry('Dashboard', 'home', 'fa fa-dashboard');
     $navigator->addEntry('Employees', 'employees-list', 'fa fa-users');
     $navigator->addEntry(TITLE, ROUTE, ENTRY_ICON_CLASS);
@@ -54,4 +54,4 @@ will be render:
 </ul>
 ```
 
-For customizing menu you can copy partial from vendor/t4web/navigation/view/partials/navigation.phtml to your module and modify it.
+For customizing menu you can copy partial from vendor/t4web/t4web-navigation/view/partials/navigation.phtml to your module and modify it.

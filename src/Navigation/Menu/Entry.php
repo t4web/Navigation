@@ -1,6 +1,6 @@
 <?php
 
-namespace Navigation\Menu;
+namespace T4webNavigation\Menu;
 
 
 class Entry {
