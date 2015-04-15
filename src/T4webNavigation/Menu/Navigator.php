@@ -6,6 +6,7 @@ namespace T4webNavigation\Menu;
 class Navigator {
 
     private $config = [];
+    private $subEntries = [];
 
     /**
      * @param Entry $entry
@@ -17,7 +18,12 @@ class Navigator {
 
     public function addEntry($label, $route, $iconClass = '')
     {
-        $this->config[] = new Entry($label, $route, $iconClass);
+        $this->add(new Entry($label, $route, $iconClass));
+    }
+
+    public function addSubEntry($parentLabel, $label, $route, $iconClass = '')
+    {
+        $this->subEntries[$parentLabel][] = new Entry($label, $route, $iconClass);
     }
 
     /**
@@ -39,6 +45,15 @@ class Navigator {
                 'route' => $entry->getRoute(),
                 'icon' => $entry->getIcon()
             ];
+
+            if (isset($this->subEntries[$entry->getLabel()])) {
+                foreach ($this->subEntries[$entry->getLabel()] as $subEntry) {
+                    $resultConfig[$entry->getRoute()]['pages'][] = [
+                        'label' => $subEntry->getLabel(),
+                        'route' => $subEntry->getRoute(),
+                    ];
+                }
+            }
         }
 
         return $resultConfig;
