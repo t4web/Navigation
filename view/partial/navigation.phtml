@@ -6,7 +6,7 @@ $container = $this->container;
     <?php foreach ($container as $page): ?>
         <?php if (!$this->navigation()->accept($page)) continue; ?>
         <?php /* @var $page Zend\Navigation\Page\Mvc */ ?>
-        <?php $hasChildren = $page->hasPages() ?>
+        <?php $hasChildren = $page->hasPages(); ?>
         <?php if (!$hasChildren): ?>
             <li<?php if ($page->isActive()) echo ' class="active"' ?>>
                 <a
@@ -18,7 +18,7 @@ $container = $this->container;
                     <?php if ($page->get("icon") !== ""): ?>
                         <i class="<?php echo $page->get("icon"); ?>"></i>
                     <?php endif; ?>
-                    <span class="mm-text"><?php echo $page->getLabel() ?></span>
+                    <span class="mm-text"><?php echo $page->getLabel(); ?></span>
                 </a>
             </li>
         <?php else: ?>
@@ -37,7 +37,9 @@ $container = $this->container;
                         <?php if ($page->get("icon") !== ""): ?>
                             <i class="<?php echo $page->get("icon"); ?>"></i>
                         <?php endif; ?>
-                        <?php echo $page->getLabel() ?>
+                        <span>
+                            <?php echo $page->getLabel(); ?>
+                        </span>
                         <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu" style="display: none;">
@@ -58,7 +60,7 @@ $container = $this->container;
                                     <?php if ($child->get("icon") !== ""): ?>
                                         <i class="<?php echo $child->get("icon"); ?>"></i>
                                     <?php endif; ?>
-                                    <?php echo $child->getLabel() ?>
+                                    <?php echo $child->getLabel(); ?>
                                 </a>
                             </li>
                         <?php endforeach ?>
