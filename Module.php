@@ -7,6 +7,7 @@ use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\ServiceProviderInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use T4webNavigation\Menu\Navigator;
+use T4webNavigation\Factory as NavigationFactory;
 
 class Module implements AutoloaderProviderInterface, ConfigProviderInterface, ServiceProviderInterface
 {
