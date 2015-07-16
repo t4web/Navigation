@@ -52,6 +52,7 @@ class Navigator
                     $resultConfig[$entry->getRoute()]['pages'][] = [
                         'label' => $subEntry->getLabel(),
                         'route' => $subEntry->getRoute(),
+                        'icon' => $subEntry->getIcon()
                     ];
                 }
             }
