@@ -22,9 +22,9 @@ class Factory extends DefaultNavigationFactory
             $config = $navigator->getConfig();
 
             $application = $serviceLocator->get('Application');
-            $routeMatch  = $application->getMvcEvent()->getRouteMatch();
-            $router      = $application->getMvcEvent()->getRouter();
-            $pages       = $this->getPagesFromConfig($config);
+            $routeMatch = $application->getMvcEvent()->getRouteMatch();
+            $router = $application->getMvcEvent()->getRouter();
+            $pages = $this->getPagesFromConfig($config);
 
             $this->pages = $this->injectComponents($pages, $routeMatch, $router);
         }

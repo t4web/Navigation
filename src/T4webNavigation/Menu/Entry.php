@@ -3,7 +3,8 @@
 namespace T4webNavigation\Menu;
 
 
-class Entry {
+class Entry
+{
 
     /**
      * @var string

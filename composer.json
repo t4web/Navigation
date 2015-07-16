@@ -1,33 +1,33 @@
 {
-    "name": "t4web/navigation",
-    "description": "ZF2 Module which simplifies creationiewing menus",
-    "type": "library",
-    "license": "BSD-3-Clause",
-    "keywords": [
-        "zf2",
-        "navigation"
-    ],
-    "homepage": "https://github.com/t4web/Navigation",
-    "authors": [
-        {
-            "name": "Max Gulturyan",
-            "email": "gulturyan@gmail.com",
-            "homepage": "http://about.me/maxgu"
-        }
-    ],
-    "require": {
-        "php": ">=5.4.0",
-        "zendframework/zendframework": "~2.5.0"
-    },
-    "require-dev" : {
-        "codeception/codeception": "2.*"
-    },
-    "autoload": {
-        "psr-0": {
-            "T4webNavigation": "src/"
-        },
-        "classmap": [
-            "./Module.php"
-        ]
+  "name": "t4web/navigation",
+  "description": "ZF2 Module which simplifies creationiewing menus",
+  "type": "library",
+  "license": "BSD-3-Clause",
+  "keywords": [
+    "zf2",
+    "navigation"
+  ],
+  "homepage": "https://github.com/t4web/Navigation",
+  "authors": [
+    {
+      "name": "Max Gulturyan",
+      "email": "gulturyan@gmail.com",
+      "homepage": "http://about.me/maxgu"
     }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "zendframework/zendframework": "~2.5.0"
+  },
+  "require-dev": {
+    "codeception/codeception": "2.*"
+  },
+  "autoload": {
+    "psr-0": {
+      "T4webNavigation": "src/"
+    },
+    "classmap": [
+      "./Module.php"
+    ]
+  }
 }

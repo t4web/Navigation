@@ -3,7 +3,8 @@
 namespace T4webNavigation\Menu;
 
 
-class Navigator {
+class Navigator
+{
 
     private $config = [];
     private $subEntries = [];
