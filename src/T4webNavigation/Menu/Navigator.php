@@ -17,14 +17,14 @@ class Navigator
         $this->config[] = $entry;
     }
 
-    public function addEntry($label, $route, $iconClass = '')
+    public function addEntry($label, $route, $iconClass = '', $params = [])
     {
-        $this->add(new Entry($label, $route, $iconClass));
+        $this->add(new Entry($label, $route, $iconClass, $params));
     }
 
-    public function addSubEntry($parentLabel, $label, $route, $iconClass = '')
+    public function addSubEntry($parentLabel, $label, $route, $iconClass = '', $params = [])
     {
-        $this->subEntries[$parentLabel][] = new Entry($label, $route, $iconClass);
+        $this->subEntries[$parentLabel][] = new Entry($label, $route, $iconClass, $params);
     }
 
     /**
@@ -44,6 +44,7 @@ class Navigator
             $resultConfig[$entry->getRoute()] = [
                 'label' => $entry->getLabel(),
                 'route' => $entry->getRoute(),
+                'params' => $entry->getParams(),
                 'icon' => $entry->getIcon()
             ];
 
@@ -52,6 +53,7 @@ class Navigator
                     $resultConfig[$entry->getRoute()]['pages'][] = [
                         'label' => $subEntry->getLabel(),
                         'route' => $subEntry->getRoute(),
+                        'params' => $subEntry->getParams(),
                         'icon' => $subEntry->getIcon()
                     ];
                 }

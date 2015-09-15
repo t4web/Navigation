@@ -17,15 +17,35 @@ class Entry
     private $route;
 
     /**
+     * @var array
+     */
+    private $params;
+
+    /**
      * @var string
      */
     private $icon;
 
-    function __construct($label, $route, $icon = '')
+    function __construct($label, $route, $icon = '', $params = [])
     {
         $this->label = $label;
         $this->route = $route;
         $this->icon = $icon;
+        $this->params = $params;
+    }
+
+    /**
+     * @return array
+     */
+    public function getParams() {
+        return $this->params;
+    }
+
+    /**
+     * @param array $params
+     */
+    public function setParams($params) {
+        $this->params = $params;
     }
 
     /**
