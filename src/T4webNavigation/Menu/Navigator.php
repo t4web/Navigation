@@ -17,14 +17,14 @@ class Navigator
         $this->config[] = $entry;
     }
 
-    public function addEntry($label, $route, $iconClass = '', $params = [])
+    public function addEntry($label, $route, $iconClass = '', $params = [], $query = [])
     {
-        $this->add(new Entry($label, $route, $iconClass, $params));
+        $this->add(new Entry($label, $route, $iconClass, $params, $query));
     }
 
-    public function addSubEntry($parentLabel, $label, $route, $iconClass = '', $params = [])
+    public function addSubEntry($parentLabel, $label, $route, $iconClass = '', $params = [], $query = [])
     {
-        $this->subEntries[$parentLabel][] = new Entry($label, $route, $iconClass, $params);
+        $this->subEntries[$parentLabel][] = new Entry($label, $route, $iconClass, $params, $query);
     }
 
     /**
