@@ -26,12 +26,18 @@ class Entry
      */
     private $icon;
 
-    function __construct($label, $route, $icon = '', $params = [])
+    /**
+     * @var array
+     */
+    private $query;
+
+    function __construct($label, $route, $icon = '', $params = [], $query = [])
     {
         $this->label = $label;
         $this->route = $route;
         $this->icon = $icon;
         $this->params = $params;
+        $this->query = $query;
     }
 
     /**
@@ -70,6 +76,14 @@ class Entry
     public function getIcon()
     {
         return $this->icon;
+    }
+
+    /**
+     * @return array
+     */
+    public function getQuery()
+    {
+        return $this->query;
     }
 
 }
