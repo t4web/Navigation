@@ -55,7 +55,7 @@ class Navigator
                         'label' => $subEntry->getLabel(),
                         'route' => $subEntry->getRoute(),
                         'params' => $subEntry->getParams(),
-                        'query' => $entry->getQuery(),
+                        'query' => $subEntry->getQuery(),
                         'icon' => $subEntry->getIcon()
                     ];
                 }
